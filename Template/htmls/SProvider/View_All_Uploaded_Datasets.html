@@ -1,0 +1,109 @@
+{% extends 'SProvider/design1.html' %}
+{% block researchblock %}
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 1104px;
+    height: 442px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style13 {color: #FFFF00}
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1">View All Uploaded Datasets Details  !!! </p>
+                            <hr>
+						    <div class="tweettext">
+                              <table border="5" bordercolor="#FF00FF">
+
+
+                                   <tr>
+
+                                    <td width="366" bgcolor="#FF0000"><div align="center" class="style12 style13"><span class="style8 style6">Fid</span></div></td>
+<td width="366" bgcolor="#FF0000"><div align="center" class="style12 style13"><span class="style8 style6">Age</span></div></td>	
+<td width="366" bgcolor="#FF0000"><div align="center" class="style12 style13"><span class="style8 style6">Sex	</span></div></td>
+<td width="366" bgcolor="#FF0000"><div align="center" class="style12 style13"><span class="style8 style6">BMI</span></div></td>	
+<td width="366" bgcolor="#FF0000"><div align="center" class="style12 style13"><span class="style8 style6">Fasting_Blood_Glucose</span></div></td>	
+<td width="366" bgcolor="#FF0000"><div align="center" class="style12 style13"><span class="style8 style6">HbA1c</span></div></td>	
+<td width="366" bgcolor="#FF0000"><div align="center" class="style12 style13"><span class="style8 style6">Blood_Pressure_Systolic</span></div></td>	
+<td width="366" bgcolor="#FF0000"><div align="center" class="style12 style13"><span class="style8 style6">Blood_Pressure_Diastolic	</span></div></td>
+<td width="366" bgcolor="#FF0000"><div align="center" class="style12 style13"><span class="style8 style6">Cholesterol_Total	</span></div></td>
+<td width="366" bgcolor="#FF0000"><div align="center" class="style12 style13"><span class="style8 style6">GGT	</span></div></td>
+<td width="366" bgcolor="#FF0000"><div align="center" class="style12 style13"><span class="style8 style6">Serum_Urate	</span></div></td>
+<td width="366" bgcolor="#FF0000"><div align="center" class="style12 style13"><span class="style8 style6">Physical_Activity_Level	</span></div></td>
+<td width="366" bgcolor="#FF0000"><div align="center" class="style12 style13"><span class="style8 style6">Dietary_Intake_Calories	</span></div></td>
+<td width="366" bgcolor="#FF0000"><div align="center" class="style12 style13"><span class="style8 style6">Alcohol_Consumption	</span></div></td>
+<td width="366" bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">Smoking_Status</span></div></td>
+                      </tr>
+                            {% for object in csvdatasets %}
+                      <tr>
+
+                           <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="left">{{object.Fid}}</div></td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="left">{{object.Age}}</div></td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="left">{{object.Sex}}</div></td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="left">{{object.Bmi}}</div></td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="left">{{object.Fbg}}</div></td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="left">{{object.hbA1c}}</div></td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="left">{{object.Bps}}</div></td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="left">{{object.Bpd}}</div></td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="left">{{object.Ct}}</div></td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="left">{{object.Ggt}}</div></td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="left">{{object.Su}}</div></td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="left">{{object.Palv
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="left">{{object.Dic}}</div></td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="left">{{object.Ac}}</div></td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="left">{{object.Ss}}</div></td>
+                        </tr>
+
+                                        {% endfor %}
+                      </table>
+				        </div>
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>
+	
+	
+	
+	
+	
